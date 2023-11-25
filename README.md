@@ -40,3 +40,17 @@ pip install -r requirements.txt
 ```
 
 mac/linux用户需将pip切换成pip3
+
+mac M1 需要手动安装pytables所需的hdf5支持
+```
+brew install hdf5
+brew install c-blosc
+# Checkout the install dir.
+brew info hdf5
+brew info c-blosc
+# export enviorment for pip
+export HDF5_DIR=/opt/homebrew/Cellar/hdf5/1.14.3/
+export BLOSC_DIR=/opt/homebrew/Cellar/c-blosc/1.21.5/
+# install pytables via pip
+pip install tables
+```
